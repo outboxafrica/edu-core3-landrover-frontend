@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import About from "./components/About"
 import Profile from './components/Profile';
 import NoMatch from './components/NoMatch';
+import PostForm from './components/PostForm';
+import './App.css';
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
           <Route path="/auth/login" > <Login /> </Route>
           {/* <Route path="/auth/signup" > <Signup /> </Route> */}
           <Route path="/about"> <About /></Route>
-          {/* <Route path="/questions"> <PostList /></Route> */}
+          <Route path="/questions/ask"> <PostForm /></Route>
           <ProtectedRoute path="/user/:id/profile" component = {Profile} /> 
           <Route path="*"> <NoMatch /></Route>
         </Switch>
