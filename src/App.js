@@ -8,6 +8,7 @@ import Profile from './components/Profile';
 import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
+import PostForm from './components/PostForm';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <ProtectedRoute path='/User/:id/profile' component={Profile} />
           <Route path="/about"> <About /></Route>
           <Route path="/search?"> <SearchBar /></Route>
+          <Route path="/questions/ask"> <PostForm /></Route>
           <Route path="*"> <NoMatch /></Route>
         </Switch>
       </React.Fragment>
