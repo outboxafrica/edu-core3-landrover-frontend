@@ -1,0 +1,8 @@
+.about-container{
+    text-align: center;
+    margin: auto 30px auto 30px;
+}
+
+.about-container p{
+    font-size: larger;
+}
