@@ -3,7 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import About from "./components/About"
+import About from "./components/About";
+import PostList from './components/PostList';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path="/auth/login" > <Login /> </Route>
           {/* <Route path="/auth/signup" > <Signup /> </Route> */}
           <Route path="/about"> <About /></Route>
-          {/* <Route path="/questions"> <PostList /></Route> */}
+          <Route path="/questions"> <PostList /></Route>
         </Switch>
       </React.Fragment>
     </div>

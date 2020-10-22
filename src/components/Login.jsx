@@ -7,6 +7,8 @@ export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // eslint-disable-next-line
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const emailHandler = (e) => {
         setEmail(e.target.value);
@@ -27,6 +29,7 @@ export default function Login() {
             payload).then(response =>{
                 if (response.data.message === 'Login successful') {
                     localStorage.setItem('token',response.data.token)
+                    setIsLoggedIn(true);
                     setTimeout(()=>{
                         history.push('/')
                     }, 5000)
