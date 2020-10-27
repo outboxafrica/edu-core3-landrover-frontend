@@ -1,25 +1,28 @@
 import axios from 'axios';
-import React, { useState,useEffect} from "react";
+import React, {useState} from "react";
+
 
 function PostQuestion(){
- const [subject, setSubject] = useState('');
- const [question, setQuestion] = useState('');
-// const [post, setPost] = useState('');
+ const [title, setTitle] = useState('');
+ const [content, setContent] = useState('');
 
 
- const questionObj ={
-    subject:subject,
-    question:question
-};
+const token = localStorage.getItem('token');
 
-const apiurl = 'https://edu-stack.herokuapp.com/questions';
+const user = (JSON.parse(atob(token.split('.')[1])));
 
+const user_id= user.id;
+const apiurl = `https://edu-stack.herokuapp.com/questions/${user_id}`;
+//const accessToken ='';
  function handleSubmit(e) {
      e.preventDefault();
-    
-       
+     const questionObj ={
+        title:title,
+        content:content
+    };
+   
 
- axios.post(apiurl,questionObj)  
+ axios.post(apiurl,questionObj,{headers:{Authorization: `${token}`}})  
         .then(res =>{
             console.log(res);
             console.log(res.data);
@@ -37,20 +40,20 @@ const apiurl = 'https://edu-stack.herokuapp.com/questions';
             <label>
                 Subject:
             <input type="text" name="title"
-             value={subject} 
-            onChange={(e)=> setSubject(e.target.value)}/>
+           
+            onChange={(e)=> setTitle(e.target.value)}/>
             </label>
             <br/>
             <label>
                 Question:
               <input type="text" name="question"
-             value={question} 
-            onChange={(e)=> setQuestion(e.target.value)}/>
+            
+            onChange={(e)=> setContent(e.target.value)}/>
             </label>
             <br/>
-            <button>Upload</button>
+            <button>Post question</button>
         </form>
-  <p>{post}</p>
+  
         </div>
   );
 }
