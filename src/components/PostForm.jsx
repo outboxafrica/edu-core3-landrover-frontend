@@ -12,8 +12,8 @@ const token = localStorage.getItem('token');
 const user = (JSON.parse(atob(token.split('.')[1])));
 
 const user_id= user.id;
-const apiurl = `https://edu-stack.herokuapp.com/questions/${user_id}`;
-//const accessToken ='';
+const apiurl = `https://edu-stack.herokuapp.com/user/${user_id}/questions`;
+
  function handleSubmit(e) {
      e.preventDefault();
      const questionObj ={

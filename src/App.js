@@ -9,6 +9,8 @@ import Profile from './components/Profile';
 import NoMatch from './components/NoMatch';
 import PostForm from './components/PostForm';
 import './App.css';
+import PostList from './components/PostList';
+import Answers from './components/Answers';
 
 function App() {
   return (
@@ -20,9 +22,11 @@ function App() {
           <Route path="/auth/login" > <Login /> </Route>
           {/* <Route path="/auth/signup" > <Signup /> </Route> */}
           <Route path="/about"> <About /></Route>
-          <Route path="/questions/ask"> <PostForm /></Route>
+          <ProtectedRoute path="/questions/ask" component={PostForm} />
           <ProtectedRoute path="/user/:id/profile" component = {Profile} /> 
           <Route path="*"> <NoMatch /></Route>
+          <ProtectedRoute path="/questions/:_id/:post_title" component={Answers} />
+          <Route path="/questions" > <PostList /> </Route>
         </Switch>
       </React.Fragment>
     </div>
