@@ -57,4 +57,5 @@ const apiurl = `https://edu-stack.herokuapp.com/user/${user_id}/questions`;
         </div>
   );
 }
-export default PostForm;
+
+export default PostQuestion;
