@@ -9,7 +9,7 @@ import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import PostForm from './components/PostForm';
-import Signup from './components/Signup';
+import Signup from './components/signup';
 import PostList from './components/PostList';
 import Answers from './components/Answers';
 
