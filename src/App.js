@@ -26,9 +26,9 @@ function App() {
           <Route path="/search?"> <SearchBar /></Route>
           <Route path="/questions/ask"> <PostForm /></Route>
           <ProtectedRoute path="/questions/ask" component={PostForm} />
-          <Route path="*"> <NoMatch /></Route>
           <Route path="/questions/:_id/:post_title" component={Answers} />
           <Route path="/questions" > <PostList /> </Route>
+          <Route path="*"> <NoMatch /></Route>
         </Switch>
       </React.Fragment>
      
