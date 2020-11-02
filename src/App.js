@@ -7,7 +7,7 @@ import About from "./components/About"
 import Profile from './components/Profile';
 import NoMatch from './components/NoMatch';
 import PostForm from './components/PostForm';
-import './App.css';
+import Signup from './components/Signup';
 import PostList from './components/PostList';
 import Answers from './components/Answers';
 import NavBar from './components/NavBar';
